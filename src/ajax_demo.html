@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax demo</title>
+    <link rel="stylesheet" href="ajax_demo.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="header_font">
+        <p id="header_city">SAN FRANCISCO</p>
+    </div>
+    <div id="main">
+        <div class="container">
+            <div class="container-left">
+                <div class="sample">
+                    <div style="margin-left:50px;">
+                        <p id="sample1_0">Mar 23,2017</p>
+                        <h1 id="sample2_0">32°</h1>
+                        <p id="sample3_0">San Francisco</p>
+                        <p id="sample4_0">Light rain</p>
+                        <!-- <p class="temp_rg">23°C<span></span>33°C</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="container-right">
+                <div class="detail">
+                    <p class="datail1_0">Statistics<a href="#">more</a></p>
+                    <hr>
+                    <div class="showbox">
+                        <div class="small">
+                            <span class="showbox_icon"><i class="fa fa-tint" aria-hidden="true"></i></span>
+                            <span class="showbox_line" id="showbox1">35%</span>
+                        </div>
+                        <div class="small">
+                            <span class="showbox_icon"><i class="fa fa-flag" aria-hidden="true"></i></span>
+                            <span class="showbox_line" id="showbox2">Easterly</span>
+                        </div>
+                        <div class="small">
+                            <span class="showbox_icon"><i class="fa fa-superpowers" aria-hidden="true"></i></span>
+                            <span class="showbox_line" id="showbox3">27km/h</span>
+                        </div>
+                        <div class="small">
+                            <span class="showbox_icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+                            <span class="showbox_line" id="showbox4">17%</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="selectbox">
+                        <form name='myForm'>
+                            <input type="radio" name="date_select" id="date_select_today" class="date_select" value="today" checked="checked">
+                            <label for="date_select_today" class="datail2_0" id="detail_today" value="today">Today</label>
+                            <input type="radio" name="date_select" id="date_select_week" class="date_select" value="week">
+                            <label for="date_select_week" class="datail2_0" id="detail_week" value="week">Week</label>
+                            <input type="radio" name="date_select" id="date_select_month" class="date_select" value="month">
+                            <label for="date_select_month" class="datail2_0" id="detail_month" value="month">Month</label>
+                        </form>
+                    </div>
+                    <hr>
+                    <div id="ftbox">
+                        <p class="ftbox_time">无数据</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./ajax_demo.js"></script>
+</body>
+
+</html>

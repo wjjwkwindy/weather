@@ -1,0 +1,38 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "This is a weather web project.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "webpack-dev-server --hot --inline --port 3003",
+    "start": "webpack"
+  },
+  "author": "wjjwkwindy",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.6.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "font-awesome": "^4.7.0",
+    "font-awesome-webpack": "0.0.5-beta.2",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "sass-loader": "^6.0.6"
+  }
+}

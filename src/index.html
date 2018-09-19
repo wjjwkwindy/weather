@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weathre-app</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="sidebar">
+        <a href="/"></a>
+        <a href=""><i class="fa fa-server" aria-hidden="true"></i>Main</a>
+        <a href=""><i class="fa fa-cog" aria-hidden="true"></i>Setting</a>
+    </div>
+    <div id="header1_0">
+        <a href="#" id="header1_2">Welcome back,Guest!</a>
+    </div>
+    <div id="header2_0">
+        <h1>Choose Your Location</h1>
+    </div>
+    <div id="header3_0">
+        <div class="tabs-responsive">
+            <div class="tabs-container">
+                <ul class="nav">
+                    <li>
+                        <span>
+                            <input type="radio" name="api_type" id="api_typeOW" class="tabmenu_radio" checked="checked">
+                            <label for="api_typeOW">OpenWeather API</label>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <input type="radio" name="api_type" id="api_typeMSN" class="tabmenu_radio">
+                            <label for="api_typeMSN">MSN Weather Crawler</label>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <input type="radio" name="api_type" id="api_typeWCN" class="tabmenu_radio">
+                            <label for="api_typeWCN">Weather CN</label>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="header4_0"></div>
+    <div id="block1290">
+        <form method="post" id="selectform" name="selectform">
+            <!-- 地址选择框 -->
+            <div class="select_block">
+                <div class="select_block_step">
+                    1
+                </div>
+                <h3>Your Location</h3>
+                <div class="tabs-responsive" style="margin-bottom:30px;">
+                    <div class="tabs-container">
+                        <ul class="nav">
+                            <li>
+                                <span>
+                                        <input type="radio" name="locationfilter" id="locationfilter_all" class="tabmenu_radio" checked="checked">
+                                        <label for="locationfilter_all">All Localtion</label>
+                                    </span>
+                            </li>
+                            <li>
+                                <span>
+                                        <input type="radio" name="locationfilter" id="locationfilter_asia" class="tabmenu_radio">
+                                        <label for="locationfilter_asia">Asia</label>
+                                    </span>
+                            </li>
+                            <li>
+                                <span>
+                                        <input type="radio" name="locationfilter" id="locationfilter_europe" class="tabmenu_radio">
+                                        <label for="locationfilter_europe">Europe</label>
+                                    </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 选择框 -->
+                <input type="radio" id="DCID1" class="select_checkbox" name="DCID" checked="checked" data-city="autolocate">
+                <label for="DCID1" id="asd">
+                    <span class="checkbox_icon" style="left: 30px;top: 50%;margin-top: -20.53px;font-size: 40px;"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">自动定位</span>
+                    <!-- <span class="checkbox_line2">Your Locate</span> -->
+                </label>
+                <input type="radio" id="DCID2" class="select_checkbox" name="DCID" data-city="chengdu">
+                <label for="DCID2">
+                    <span class="checkbox_icon fonticon_cn"></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">成都</span>
+                    <span class="checkbox_line2">中国</span>
+                </label>
+                <input type="radio" id="DCID3" class="select_checkbox" name="DCID" data-city="beijing">
+                <label for="DCID3">
+                        <span class="checkbox_icon fonticon_cn"></span>
+                        <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                        <span class="checkbox_line1">北京</span>
+                        <span class="checkbox_line2">中国</span>
+                </label>
+                <input type="radio" id="DCID4" class="select_checkbox" name="DCID" data-city="tianjin">
+                <label for="DCID4">
+                        <span class="checkbox_icon fonticon_cn"></span>
+                        <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                        <span class="checkbox_line1">天津</span>
+                        <span class="checkbox_line2">中国</span>
+                </label>
+                <input type="radio" id="DCID5" class="select_checkbox" name="DCID" data-city="haikou">
+                <label for="DCID5">
+                        <span class="checkbox_icon fonticon_cn"></span>
+                        <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                        <span class="checkbox_line1">海口</span>
+                        <span class="checkbox_line2">中国</span>
+                </label>
+                <input type="radio" id="DCID6" class="select_checkbox" name="DCID" data-city="chongqing">
+                <label for="DCID6">
+                        <span class="checkbox_icon fonticon_cn"></span>
+                        <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                        <span class="checkbox_line1">重庆</span>
+                        <span class="checkbox_line2">中国</span>
+                </label>
+                <!-- <input type="radio" id="DCID4" class="select_checkbox" name="DCID" data-city="London">
+                <label for="DCID4">
+                    <span class="checkbox_icon fonticon_gb"></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">London</span>
+                    <span class="checkbox_line2">United Kingdom</span>
+                </label>
+                <input type="radio" id="DCID5" class="select_checkbox" name="DCID" data-city="Frankfurt">
+                <label for="DCID5">
+                    <span class="checkbox_icon fonticon_de"></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">Frankfurt</span>
+                    <span class="checkbox_line2">Germany</span>
+                </label>
+                <input type="radio" id="DCID6" class="select_checkbox" name="DCID" data-city="Paris">
+                <label for="DCID6">
+                    <span class="checkbox_icon fonticon_fr"></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">Paris</span>
+                    <span class="checkbox_line2">France</span>
+                </label>
+                <input type="radio" id="DCID7" class="select_checkbox" name="DCID" data-city="New York (NJ)">
+                <label for="DCID7">
+                    <span class="checkbox_icon fonticon_us"></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">New York (NJ)</span>
+                    <span class="checkbox_line2">United States</span>
+                </label>
+                <input type="radio" id="DCID8" class="select_checkbox" name="DCID" data-city="Los Angeles">
+                <label for="DCID8">
+                    <span class="checkbox_icon fonticon_us"></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">Los Angeles</span>
+                    <span class="checkbox_line2">United States</span>
+                </label> -->
+            </div>
+
+            <!-- 摄氏、华氏选择框 -->
+            <div class="select_block">
+                <div class="select_block_step">
+                    2
+                </div>
+                <h3>°C/°F</h3>
+                <div class="tabs-responsive" style="margin-bottom:30px;">
+                    <div class="tabs-container">
+                        <ul class="nav">
+                            <li>
+                                <span>
+                                        <input type="radio" name="degreefilter" id="degreefilter_all" class="tabmenu_radio" checked="checked">
+                                        <label for="degreefilter_all">Celsius or Fahrenheit</label>
+                                    </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 选择框 -->
+                <input type="radio" id="degreeC" class="select_checkbox" name="degree" checked="checked" data-tem="0">
+                <label for="degreeC">
+                    <span class="checkbox_icon fonticon_smiley"></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">°C</span>
+                    <span class="checkbox_line2">Celsius </span>
+                </label>
+                <input type="radio" id="degreeF" class="select_checkbox" name="degree" data-tem="1">
+                <label for="degreeF">
+                    <span class="checkbox_icon fonticon_blush"></span>
+                    <span class="checkbox_checkmark"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    <span class="checkbox_line1">°F</span>
+                    <span class="checkbox_line2">Fahrenheit</span>
+                </label>
+            </div>
+        </form>
+        <!-- 底栏 -->
+        <div class="summary">
+            <div class="summary_container">
+                <div class="summary_container_city">
+                    <span class="CITY1">City</span>
+                    <span class="CITY2" id="city" data-city="autolocate">Auto Locate</span>
+                </div>
+                <div class="summary_container_tem">
+                    <span class="CITY1">Celsius or Fahrenheit</span>
+                    <span class="CITY2" id="tem" data-tem="0">°C</span>
+                </div>
+                <input type="submit" id="confirm" name="confimsubmit" value="Confirm">
+            </div>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+
+</html>

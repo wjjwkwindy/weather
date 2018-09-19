@@ -1,0 +1,269 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Black.ttf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background: #f0f4f6;
+    color: #484a4a;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    height: 2px;
+    background-color: #e2e2e2;
+    border: 0;
+    margin-top: 15px;
+}
+
+#header {
+    margin: 0 auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#header_font {
+    font-family: sans-serif;
+    font-size: 150px;
+    font-weight: 600;
+    position: relative;
+    top: 60px;
+    user-select: none;
+    cursor: default;
+    z-index: -1;
+    text-align: center;
+}
+
+#header_city {
+    margin: 0;
+    padding: 15px 0;
+    line-height: 100px;
+    text-transform: uppercase;
+}
+
+#main {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding-top: 30px;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    min-height: 688px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px 0px #fff;
+}
+
+.container-left {
+    display: inline-block;
+    width: 35%;
+    background-image: linear-gradient(to right bottom, #f24b90, #f78167);
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sample {
+    position: relative;
+    height: 100%;
+}
+
+#sample1_0 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 50px 0 350px 0;
+}
+
+#sample2_0 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 120px;
+    font-weight: 100;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    text-indent: -6px;
+    margin-bottom: 70px;
+}
+
+#sample3_0 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 300;
+    padding: 0 0 5px 0;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+}
+
+#sample4_0 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 300;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 30px;
+}
+
+.container-right {
+    width: 65%;
+}
+
+.detail {
+    padding: 70px 70px 30px 70px;
+}
+
+.datail1_0 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.datail1_0>a {
+    font-size: 20px;
+    float: right;
+    color: #f24f8d;
+}
+
+.small {
+    display: inline-flex;
+    /* border: 1px solid #cecece; */
+    width: 180px;
+    height: 150px;
+    vertical-align: text-top;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.showbox {
+    margin: 30px 0;
+}
+
+.showbox_icon {
+    font-size: 45px;
+}
+
+.showbox_line {
+    font-size: 18px;
+    font-weight: 400;
+    color: #8A8A8A;
+}
+
+.selectbox {
+    display: flex;
+}
+
+.date_select {
+    display: none;
+}
+
+.date_select:checked+label {
+    font-size: 25px;
+}
+
+.date_select:checked+label:after {
+    width: 100%;
+}
+
+.datail2_0 {
+    display: inline-block;
+    margin: 0;
+    margin-right: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+    /* -webkit-transition: hover ease-in .3s ;
+    -moz-transition: hover ease-in .3s ;
+    transition: hover ease-in .3s ; */
+}
+
+.datail2_0:after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: #f24b90;
+    position: relative;
+    top: 17px;
+    transition: width .3s;
+}
+
+#ftbox {
+    font-size: 18px;
+    font-weight: 400;
+    color: #8A8A8A;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    height: 350px;
+}
+
+.ftbox_time {
+    margin: 0;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+
+.ftbox_weather {
+    float: right;
+    padding-right: 50px;
+}
+
+.ftbox_temp {
+    float: right;
+    font-size: 25px;
+    color: #f24f8d;
+}
