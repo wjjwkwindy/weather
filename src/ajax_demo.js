@@ -1,8 +1,7 @@
 /* eslint-disable indent */
 
 // 月份缩写
-var monthAbb = [
-  {
+var monthAbb = [{
     month: '0',
     abb: 'Jan'
   },
@@ -98,6 +97,7 @@ const myHttpClient = url => {
     client.responseType = 'json';
     client.setRequestHeader('Accept', 'application/json');
     client.send();
+
     function handler() {
       if (this.readyState !== 4) {
         return;
@@ -119,7 +119,7 @@ myHttpClient(url)
     console.log(error);
   });
 /****************************/
-function handlerWeather(res){
+function handlerWeather(res) {
   var weather = res,
   weatherCurrent = weather.HeWeather5[0],
   weatherNow = weatherCurrent.now, // 现在天气预报
@@ -127,23 +127,23 @@ function handlerWeather(res){
   parseTime = new Date(Date.parse(updateTime));
   hourlyForecast = weatherCurrent.hourly_forecast; // 分时天气预报
   dailyForecast = weatherCurrent.daily_forecast; // 分天天气预报
+  // 获取现在天气具体数值
+  dataString.temp.innerText = weatherNow.fl + '°'; // 现在温度
+  dataString.date.innerText = getAbb(parseTime.getMonth()) + ' ' + parseTime.getDate() + ', ' + parseTime.getFullYear();
+  dataString.weather.innerText = weatherNow.cond.txt; // 现在天气描述
+  dataString.showbox1.innerText = weatherNow.pcpn + ' %'; // 现在降雨概率
+  dataString.showbox2.innerText = weatherNow.wind.dir; // 现在风向
+  dataString.showbox3.innerText = weatherNow.wind.spd + ' km/h'; // 现在风速
+  dataString.showbox4.innerText = weatherNow.pres + ' hPa'; // 现在气压
 
-dataString.temp.innerText = weatherNow.fl + '°';
-dataString.date.innerText = getAbb(parseTime.getMonth()) + ' ' + parseTime.getDate() + ', ' + parseTime.getFullYear();
-dataString.weather.innerText = weatherNow.cond.txt;
-dataString.showbox1.innerText = weatherNow.pcpn + '%';
-dataString.showbox2.innerText = weatherNow.wind.dir;
-dataString.showbox3.innerText = weatherNow.wind.spd + 'km/h';
-dataString.showbox4.innerText = weatherNow.pres;
-
-getDetailWeather(hourlyForecast, 'today');
+  getDetailWeather(hourlyForecast, 'today');
 
 }
 
-
+// 当点击 “Today” 、“Week” 或 “Month” 按钮时进行判断
 var currentCheckbox = dataString.checkbox;
 for (var i = 0; i < currentCheckbox.length; i++) {
-  currentCheckbox[i].onclick = function() {
+  currentCheckbox[i].onclick = function () {
     switch (this.value) {
       case 'today':
         getDetailWeather(hourlyForecast, 'today');
