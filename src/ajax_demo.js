@@ -62,6 +62,8 @@ var dataString = {
   showbox2: doc.getElementById('showbox2'),
   showbox3: doc.getElementById('showbox3'),
   showbox4: doc.getElementById('showbox4'),
+  windDegreeControl:doc.getElementById('wind-degree-control'),
+  windSpeedControl:doc.getElementById('wind-speed-control'),
   checkbox: doc.myForm.date_select
 };
 
@@ -133,7 +135,9 @@ function handlerWeather(res) {
   dataString.weather.innerText = weatherNow.cond.txt; // 现在天气描述
   dataString.showbox1.innerText = weatherNow.pcpn + ' %'; // 现在降雨概率
   dataString.showbox2.innerText = weatherNow.wind.dir; // 现在风向
+  dataString.windDegreeControl.classList.add("from-"+weatherNow.wind.deg+"-deg"); // 改变风向图标
   dataString.showbox3.innerText = weatherNow.wind.spd + ' km/h'; // 现在风速
+  dataString.windSpeedControl.classList.add("wi-wind-beaufort-"+weatherNow.wind.spd); // 改变风速图标
   dataString.showbox4.innerText = weatherNow.pres + ' hPa'; // 现在气压
 
   getDetailWeather(hourlyForecast, 'today');
