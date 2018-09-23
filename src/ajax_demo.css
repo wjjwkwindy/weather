@@ -193,6 +193,10 @@ hr {
     font-size: 45px;
 }
 
+.showbox_icon:first-child{
+    transform: scale(1.2);
+}
+
 .showbox_line {
     font-size: 18px;
     font-weight: 400;

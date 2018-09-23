@@ -8,21 +8,23 @@
     <title>ajax demo</title>
     <link rel="stylesheet" href="ajax_demo.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="weather-icons/css/weather-icons.min.css">
+    <link rel="stylesheet" href="weather-icons/css/weather-icons-wind.min.css">
 </head>
 
 <body>
     <div id="header_font">
-        <p id="header_city">SAN FRANCISCO</p>
+        <p id="header_city">N/A</p>
     </div>
     <div id="main">
         <div class="container">
             <div class="container-left">
                 <div class="sample">
                     <div style="margin-left:50px;">
-                        <p id="sample1_0">Mar 23,2017</p>
-                        <h1 id="sample2_0">32°</h1>
-                        <p id="sample3_0">San Francisco</p>
-                        <p id="sample4_0">Light rain</p>
+                        <p id="sample1_0">N/A</p>
+                        <h1 id="sample2_0">N/A</h1>
+                        <p id="sample3_0">N/A</p>
+                        <p id="sample4_0">N/A</p>
                         <!-- <p class="temp_rg">23°C<span></span>33°C</p> -->
                     </div>
                 </div>
@@ -33,28 +35,27 @@
                     <hr>
                     <div class="showbox">
                         <div class="small">
-                            <span class="showbox_icon"><i class="fa fa-tint" aria-hidden="true"></i></span>
-                            <span class="showbox_line" id="showbox1">35%</span>
+                            <span class="showbox_icon"><i class="wi wi-raindrops" aria-hidden="true"></i></span>
+                            <span class="showbox_line" id="showbox1">N/A</span>
                         </div>
                         <div class="small">
-                            <span class="showbox_icon"><i class="fa fa-flag" aria-hidden="true"></i></span>
-                            <span class="showbox_line" id="showbox2">Easterly</span>
+                            <span class="showbox_icon"><i class="wi wi-wind from-262-deg" aria-hidden="true"></i></span>
+                            <span class="showbox_line" id="showbox2">N/A</span>
                         </div>
                         <div class="small">
-                            <span class="showbox_icon"><i class="fa fa-superpowers" aria-hidden="true"></i></span>
-                            <span class="showbox_line" id="showbox3">27km/h</span>
+                            <span class="showbox_icon"><i class="wi wi-wind-beaufort-3" aria-hidden="true"></i></span>
+                            <span class="showbox_line" id="showbox3">N/A</span>
                         </div>
                         <div class="small">
-                            <span class="showbox_icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
-                            <span class="showbox_line" id="showbox4">17%</span>
+                            <span class="showbox_icon"><i class="wi wi-barometer" aria-hidden="true"></i></span>
+                            <span class="showbox_line" id="showbox4">N/A</span>
                         </div>
                     </div>
 
-
-
                     <div class="selectbox">
                         <form name='myForm'>
-                            <input type="radio" name="date_select" id="date_select_today" class="date_select" value="today" checked="checked">
+                            <input type="radio" name="date_select" id="date_select_today" class="date_select" value="today"
+                                checked="checked">
                             <label for="date_select_today" class="datail2_0" id="detail_today" value="today">Today</label>
                             <input type="radio" name="date_select" id="date_select_week" class="date_select" value="week">
                             <label for="date_select_week" class="datail2_0" id="detail_week" value="week">Week</label>
