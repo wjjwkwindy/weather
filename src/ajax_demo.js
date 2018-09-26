@@ -1,7 +1,8 @@
 /* eslint-disable indent */
 
 // 月份缩写
-var monthAbb = [{
+var monthAbb = [
+  {
     month: '0',
     abb: 'Jan'
   },
@@ -62,8 +63,8 @@ var dataString = {
   showbox2: doc.getElementById('showbox2'),
   showbox3: doc.getElementById('showbox3'),
   showbox4: doc.getElementById('showbox4'),
-  windDegreeControl:doc.getElementById('wind-degree-control'),
-  windSpeedControl:doc.getElementById('wind-speed-control'),
+  windDegreeControl: doc.getElementById('wind-degree-control'),
+  windSpeedControl: doc.getElementById('wind-speed-control'),
   checkbox: doc.myForm.date_select
 };
 
@@ -73,6 +74,16 @@ console.log(searchString);
 var args = getQueryStringArgs();
 console.log(args);
 
+// 点击“切换城市”
+var dialogContainer = doc.getElementById('dialog-container');
+var btnDialogTrigger = doc.getElementById('dialog-trigger');
+btnDialogTrigger.addEventListener('click', function() {
+  dialogContainer.style.display = 'block';
+});
+var btnDialogClose = doc.getElementById('dialog-closer');
+btnDialogClose.addEventListener('click', function() {
+  dialogContainer.style.display = 'none';
+});
 // 请求天气api
 var url = 'https://free-api.heweather.com/v5/weather',
   key = '987bc68871c94142ae815b39a1081e63',
@@ -84,8 +95,8 @@ var url = 'https://free-api.heweather.com/v5/weather',
   ftboxTemp = '',
   ftboxTempMin = '',
   html = '';
-dataString.city.innerText = cityname.toUpperCase();
-dataString.headerCity.innerText = cityname.toUpperCase();
+dataString.city.firstChild.nodeValue = cityname.toUpperCase(); // 显示城市名到页面
+dataString.headerCity.innerText = cityname.toUpperCase(); // 显示城市名到页面头部
 
 // 获取天气
 url = addURLParam(url, 'city', cityname);
@@ -123,31 +134,39 @@ myHttpClient(url)
 /****************************/
 function handlerWeather(res) {
   var weather = res,
-  weatherCurrent = weather.HeWeather5[0],
-  weatherNow = weatherCurrent.now, // 现在天气预报
-  updateTime = weatherCurrent.basic.update.loc, // 服务器 api 数据更新时间
-  parseTime = new Date(Date.parse(updateTime));
+    weatherCurrent = weather.HeWeather5[0],
+    weatherNow = weatherCurrent.now, // 现在天气预报
+    updateTime = weatherCurrent.basic.update.loc, // 服务器 api 数据更新时间
+    parseTime = new Date(Date.parse(updateTime));
   hourlyForecast = weatherCurrent.hourly_forecast; // 分时天气预报
   dailyForecast = weatherCurrent.daily_forecast; // 分天天气预报
   // 获取现在天气具体数值
   dataString.temp.innerText = weatherNow.fl + '°'; // 现在温度
-  dataString.date.innerText = getAbb(parseTime.getMonth()) + ' ' + parseTime.getDate() + ', ' + parseTime.getFullYear();
+  dataString.date.innerText =
+    getAbb(parseTime.getMonth()) +
+    ' ' +
+    parseTime.getDate() +
+    ', ' +
+    parseTime.getFullYear();
   dataString.weather.innerText = weatherNow.cond.txt; // 现在天气描述
   dataString.showbox1.innerText = weatherNow.pcpn + ' %'; // 现在降雨概率
   dataString.showbox2.innerText = weatherNow.wind.dir; // 现在风向
-  dataString.windDegreeControl.classList.add("from-"+weatherNow.wind.deg+"-deg"); // 改变风向图标
+  dataString.windDegreeControl.classList.add(
+    'from-' + weatherNow.wind.deg + '-deg'
+  ); // 改变风向图标
   dataString.showbox3.innerText = weatherNow.wind.spd + ' km/h'; // 现在风速
-  dataString.windSpeedControl.classList.add("wi-wind-beaufort-"+weatherNow.wind.spd); // 改变风速图标
+  dataString.windSpeedControl.classList.add(
+    'wi-wind-beaufort-' + weatherNow.wind.spd
+  ); // 改变风速图标
   dataString.showbox4.innerText = weatherNow.pres + ' hPa'; // 现在气压
 
   getDetailWeather(hourlyForecast, 'today');
-
 }
 
 // 当点击 “Today” 、“Week” 或 “Month” 按钮时进行判断
 var currentCheckbox = dataString.checkbox;
 for (var i = 0; i < currentCheckbox.length; i++) {
-  currentCheckbox[i].onclick = function () {
+  currentCheckbox[i].onclick = function() {
     switch (this.value) {
       case 'today':
         getDetailWeather(hourlyForecast, 'today');
